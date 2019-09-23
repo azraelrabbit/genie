@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <VersionPrefix>1.16</VersionPrefix>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,5 +16,6 @@
     <PackageReference Include="Linux.ProcessManager" Version="1.5.3" />
     <PackageReference Include="System.CommandLine.Experimental" Version="0.2.0-alpha.19174.3" />
     <PackageReference Include="Tmds.LibC" Version="0.2.0" />
+    <RuntimeHostConfigurationOption Include="System.Globalization.Invariant" Value="true" />
   </ItemGroup>
 </Project>

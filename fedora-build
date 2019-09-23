@@ -12,20 +12,20 @@ if [ ! -e /usr/bin/hostess ]; then
 fi
 
 # Install dotnet and dependent packages
-sudo dnf install daemonize dotnet-runtime-2.2 dotnet-host-fxr-2.2 dotnet-sdk-2.2
+sudo dnf install daemonize dotnet-runtime-3.0 dotnet-host-fxr-3.0 dotnet-sdk-3.0
 
 # Build genie
 cd genie
-dotnet publish -r linux-x64 --self-contained false
+dotnet publish -c Release --self-contained false
 cd ..
 
 # Install genie
-sudo install -Dm 4755 -o root "genie/bin/Debug/netcoreapp2.2/linux-x64/publish/genie" -t "/usr/bin"
-sudo install -Dm 644 -o root "genie/bin/Debug/netcoreapp2.2/linux-x64/publish/genie.dll" -t "/usr/bin"
-sudo install -Dm 744 -o root "genie/bin/Debug/netcoreapp2.2/linux-x64/publish/Linux.ProcessManager.dll" -t "/usr/bin"
-sudo install -Dm 744 -o root "genie/bin/Debug/netcoreapp2.2/linux-x64/publish/System.CommandLine.dll" -t "/usr/bin"
-sudo install -Dm 744 -o root "genie/bin/Debug/netcoreapp2.2/linux-x64/publish/Tmds.LibC.dll" -t "/usr/bin"
-sudo install -Dm 644 -o root "genie/bin/Debug/netcoreapp2.2/linux-x64/publish/genie.runtimeconfig.json" -t "/usr/bin"
+sudo install -Dm 4755 -o root "genie/bin/Release/netcoreapp3.0/linux-x64/publish/genie" -t "/usr/bin"
+sudo install -Dm 644 -o root "genie/bin/Release/netcoreapp3.0/linux-x64/publish/genie.dll" -t "/usr/bin"
+sudo install -Dm 744 -o root "genie/bin/Release/netcoreapp3.0/linux-x64/publish/Linux.ProcessManager.dll" -t "/usr/bin"
+sudo install -Dm 744 -o root "genie/bin/Release/netcoreapp3.0/linux-x64/publish/System.CommandLine.dll" -t "/usr/bin"
+sudo install -Dm 744 -o root "genie/bin/Release/netcoreapp3.0/linux-x64/publish/Tmds.LibC.dll" -t "/usr/bin"
+sudo install -Dm 644 -o root "genie/bin/Release/netcoreapp3.0/linux-x64/publish/genie.runtimeconfig.json" -t "/usr/bin"
 sudo install -Dm 755 -o root "systemd-genie/lib/genie/dumpwslenv.sh" -t "/usr/lib/genie/"
 sudo install -Dm 755 -o root "systemd-genie/lib/genie/readwslenv.sh" -t "/usr/lib/genie/"
 sudo install -Dm 755 -o root "systemd-genie/lib/genie/runinwsl.sh" -t "/usr/lib/genie/"

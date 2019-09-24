@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <VersionPrefix>1.16</VersionPrefix>
+    <VersionPrefix>1.17</VersionPrefix>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <RuntimeIdentifier>linux-x64</RuntimeIdentifier>
   </PropertyGroup>

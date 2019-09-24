@@ -171,7 +171,7 @@ namespace ArkaneSystems.WindowsSubsystemForLinux.Genie
             }
 
             // Hosts file: check for old host name; if there, remove it.
-            r = RunAndWait ("/bin/sh", "-c \"/usr/bin/hostess has `hostname` > /dev/null\"");
+            r = RunAndWait ("/bin/sh", "-c \"/usr/bin/hostess has `hostname` > /dev/null 2>&1\"");
 
             if (r == 0)
             {
@@ -184,7 +184,7 @@ namespace ArkaneSystems.WindowsSubsystemForLinux.Genie
                    "initializing bottle failed; bind mounting hostname");
 
             // Hosts file: check for new host name; if not there, update it.
-            r = RunAndWait ("/bin/sh", "-c \"/usr/bin/hostess has `hostname`-wsl > /dev/null\"");
+            r = RunAndWait ("/bin/sh", "-c \"/usr/bin/hostess has `hostname`-wsl > /dev/null 2>&1\"");
 
             if (r == 1)
             {

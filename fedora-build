@@ -30,4 +30,5 @@ sudo install -Dm 755 -o root "systemd-genie/lib/genie/dumpwslenv.sh" -t "/usr/li
 sudo install -Dm 755 -o root "systemd-genie/lib/genie/readwslenv.sh" -t "/usr/lib/genie/"
 sudo install -Dm 755 -o root "systemd-genie/lib/genie/runinwsl.sh" -t "/usr/lib/genie/"
 sudo install -Dm 755 -o root "systemd-genie/lib/systemd/system-environment-generators/10-genie-envar.sh" -t "/usr/lib/systemd/system-environment-generators"
+sudo install -Dm 640 -o root "systemd-genie/etc/sudoers.d/genie-wslinterop" -t "/etc/sudoers.d/genie-wslinterop"
 sudo install -Dm 644 "LICENSE" "/usr/share/licenses/${PKGNAME}/LICENSE"

@@ -1,0 +1,5 @@
+# Keep interop environment when sudoing
+Defaults        env_keep += WSL_INTEROP
+Defaults        env_keep += WSL_DISTRO_NAME
+Defaults        env_keep += WSLENV
+Defaults        env_keep += INSIDE_GENIE
